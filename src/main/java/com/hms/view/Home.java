@@ -43,7 +43,7 @@ public class Home extends javax.swing.JFrame {
 
         menuPTest.setText("Lab Test");
 
-        menuPTestSetup.setText("Setup (Input)");
+        menuPTestSetup.setText("Menu (Input)");
         menuPTestSetup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuPTestSetupActionPerformed(evt);
@@ -68,16 +68,16 @@ public class Home extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addGap(143, 143, 143)
+                .addComponent(jLabel1)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(360, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1)
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         pack();
@@ -85,11 +85,13 @@ public class Home extends javax.swing.JFrame {
 
     private void menuPTestSetupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPTestSetupActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         new LabTestSetup().setVisible(true);
     }//GEN-LAST:event_menuPTestSetupActionPerformed
 
     private void menuPTestSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPTestSearchActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         new LabTestSearch().setVisible(true);
     }//GEN-LAST:event_menuPTestSearchActionPerformed
 

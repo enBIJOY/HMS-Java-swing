@@ -4,9 +4,12 @@
 
 package com.hms.controller;
 
-import com.hms.model.*;
-import com.hms.view.*;
-
+import com.hms.model.PathologicalTest;
+import com.hms.model.RadiologicalTest;
+import com.hms.model.LabTest;
+import com.hms.view.Home;
+import java.awt.List;
+import java.util.*;
 /**
  *
  * @author Bijoy
@@ -14,19 +17,21 @@ import com.hms.view.*;
 public class HospitalManagementSoftware {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        //System.out.println("Hello World!");
         new Home().setVisible(true);
+        PathologicalTest iTest = new PathologicalTest("CBC", 400, true);
+        System.out.println(iTest.returnLabTestInfo());
         
-//        LabTest labTest = new LabTest();
-//        System.out.println(labTest.returnLabTestInfo());
-                
-//        PathologicalTest pT = new PathologicalTest();
-//        System.out.println(pT.returnLabTestInfo());
+        RadiologicalTest rTest = new RadiologicalTest("x-ray", 400, true ,"2x4");
+        System.out.println(rTest.returnRLabTestInfo());
+        
+        ArrayList<LabTest> test = new ArrayList<>();
+        test.add(iTest);
+        test.add(rTest);
+        System.out.println(test);
+//        for(LabTest tests: test){
+//            System.out.println(test);
+//        }
 
-//        PathologicalTest pTest = new PathologicalTest("CBC",300,true,"chemical");
-//        System.out.println(pTest.returnLabTestInfo());
-//
-//        RadiologicalTest rTest = new RadiologicalTest("X-ray",400,true,"2x4");
-//        System.out.println(rTest.returnLabTestInfo());
-    } 
+    }
 }

@@ -8,41 +8,98 @@ package com.hms.model;
  *
  * @author Bijoy
  */
-
-
-public class RadiologicalTest extends LabTest implements CostCalculation , TestReport {
-    private String plateDimention;
+public class RadiologicalTest extends LabTest implements CostCalculation, TestReport{
     
-    public RadiologicalTest(String title, double cost, boolean isAvailable, String plateDimention){
+    private String plateDimension;
+    
+    public RadiologicalTest(){}
+    
+    public RadiologicalTest(String title,
+                    double cost,
+                    boolean isAvailable, String plateDimension){
         this.title = title;
-
         this.cost = cost;
-        this.isAvailable = isAvailable;
-        this.plateDimention = plateDimention;
+        this.isAvailable = isAvailable;   
+        this.plateDimension = plateDimension;
     }
-    public String retunLabTestInfo(){
-        String output = "Test name: "+this.title+"\n"
-                + "Cost: "+this.cost+"\n"
-                +"Plate Dimention: "+ this.plateDimention+"\n" 
-                + "Availability: "+this.isAvailable;
+    
+//    void search(String title){
+//        if(this.title == title)
+//            show();
+//        else
+//            System.out.println("Not found");
+//    }
+
+    /**
+     * @return the title
+     */
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return the cost
+     */
+    @Override
+    public double getCost() {
+        return cost;
+    }
+
+    /**
+     * @param cost the cost to set
+     */
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    /**
+     * @return the isAvailable
+     */
+    @Override
+    public boolean isIsAvailable() {
+        return isAvailable;
+    }
+
+    /**
+     * @param isAvailable the isAvailable to set
+     */
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public String returnRLabTestInfo() {
+        String output = "Test name: "+this.getTitle()+ "\r\n"
+                + "Cost: "+this.getCost()+"\r\n"
+                + " Plate Dimension: "+this.plateDimension+"\r\n"
+                + "Availability: "+this.isIsAvailable();
         return output;
     }
 
-
     @Override
-    public double calcCost() {
-        double totalCost=this.cost-this.cost;
-        return totalCost;
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-//    @Override
-    public boolean deliverReport() {
+    public double calCost() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-}
 
-//    private String title;
-//    private double cost;
-//    private boolean isAvailable;
+    @Override
+    public boolean deliveryReport() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String returnLabTestInfo() {
+        return this.getTitle()+ "\r\n"
+                +this.getCost()+"\r\n"
+                +this.plateDimension+"\r\n"
+                +this.isIsAvailable();
+    }
+
     
+}
